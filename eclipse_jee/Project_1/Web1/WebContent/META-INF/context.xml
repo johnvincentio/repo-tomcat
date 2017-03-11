@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/mydb2"
+		auth="Container"
+		type="javax.sql.DataSource"
+		maxActive="50" 
+		maxIdle="30" 
+		maxWait="10000" 
+		username="prc4031"
+		password="love257$" 
+		driverClassName="com.ibm.db2.jcc.DB2Driver"
+		url="jdbc:db2://db2dev.dev.irac.ecom.ad.hertz.com:60100/ecomdev" />
+</Context>

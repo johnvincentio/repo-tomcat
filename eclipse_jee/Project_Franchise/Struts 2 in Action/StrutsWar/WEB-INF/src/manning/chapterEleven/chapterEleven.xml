@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	 <!-- 
+		This package contains the non-secure portions of the Struts 2 Portfolio.  This allows these
+		public actions to share inheritance of things specialized to the non-secure portions of the application.
+	 -->
+		
+    <package name="chapterElevenPublic" namespace="/chapterEleven" extends="struts-default">
+ 		
+ 		<global-results>
+  		  <result name="error">/chapterEleven/Error.jsp</result>
+  	</global-results>
+  		
+    <global-exception-mappings>
+       <exception-mapping exception="java.lang.Exception" result="error"/>
+    </global-exception-mappings>
+
+		<action name="PortfolioHomePage" class="manning.chapterEleven.PortfolioHomePage">
+       <result>/chapterEleven/PortfolioHomePage.jsp</result>
+		</action>	
+		
+		<action name="ArtistHomePage" class="manning.chapterEleven.PortfolioHomePage">
+       <result>/chapterEleven/ArtistHomePage.jsp</result>
+		</action>	
+
+		<action name="VisitorHomePage" class="manning.chapterEleven.PortfolioHomePage">
+       <result>/chapterEleven/VisitorHomePage.jsp</result>
+		</action>	
+	
+    <action name="ViewPortfolioJSP" class="manning.chapterEleven.ViewPortfolio" >
+			<result>/chapterEleven/ViewPortfolio.jsp</result>
+    </action>
+  
+ 		<action name="LoginForm" >
+			<result>/chapterEleven/Login.jsp</result>
+    </action>
+
+		<action name="Login" class="manning.chapterEleven.Login">
+			<result type="redirectAction">
+			   <param name="actionName">AdminPortfolio</param>
+         <param name="namespace">/chapterEleven/secure</param>
+      </result>
+			<result name="input">/chapterEleven/Login.jsp</result>
+    </action>
+ 
+   <action name="Registration" >
+      <result>/chapterEleven/Registration.jsp</result>
+   </action>
+
+   <action name="Register" class="manning.chapterEleven.Register">
+      <result>/chapterEleven/RegistrationSuccess.jsp</result>
+      <result name="input">/chapterEleven/Registration.jsp</result>
+   </action>
+        
+</package>
+
+
+		 <!-- 
+		 			This package contains the secure portions of the Struts 2 Portfolio.  This allows these
+		 			secure actions to share inheritance of things specialized to the secure portions of the application.
+		 -->
+		 <package name="chapterElevenSecure" namespace="/chapterEleven/secure" extends="struts-default">
+				
+				<!-- We need to define the authentication interceptor and configure a new stack, based upon the 
+							builtin default stack.  We will simply add our authentication stack to the top of the default
+							stack and make it the default intercptor reference for the actions in this package.
+				-->
+				<interceptors>
+
+					<interceptor name="authenticationInterceptor" class="manning.utils.AuthenticationInterceptor"/>
+
+					<interceptor-stack name="secureStack">
+						<interceptor-ref name="authenticationInterceptor"/>
+						<interceptor-ref name="defaultStack"/>
+					</interceptor-stack>
+						
+			</interceptors>
+				
+				<default-interceptor-ref name="secureStack"/>
+
+				<global-results>
+  				<result name="login" type="redirect">/chapterEleven/LoginForm.action</result>
+  			  <result name="error">/chapterEleven/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+      	<action name="AdminPortfolio" class="manning.chapterEleven.UpdateAccountForm">
+			     <result>/chapterEleven/AdminPortfolio.jsp</result>
+		    </action>
+		    
+		    <action name="CreatePortfolioForm">
+			     <result>/chapterEleven/CreatePortfolio.jsp</result>
+		    </action>
+		
+		    <action name="CreatePortfolio" class="manning.chapterNine.CreatePortfolio">
+		       <result name="input">/chapterEleven/CreatePortfolio.jsp</result>
+			     <result>/chapterEleven/PortfolioAdded.jsp</result>
+		    </action>
+		    
+		    <action name="UpdatePortfolio" class="manning.chapterEleven.UpdatePortfolio">
+			      <result>/chapterEleven/UpdatePortfolioSuccess.jsp</result>
+			      <interceptor-ref name="paramsPrepareParamsStack"/>
+		    </action>
+			    		
+	   	 <action name="EditPortfolio" class="manning.chapterEleven.EditPortfolio">
+			   <result>/chapterEleven/EditPortfolio.jsp</result>
+		   </action>
+         
+        <action name="UpdateAccountForm" class="manning.chapterEleven.UpdateAccountForm">
+			<result>/chapterEleven/UpdateAccountForm.jsp</result>
+        </action>
+        
+        <action name="UpdateAccount" class="manning.chapterEleven.UpdateAccount">
+			<result>/chapterEleven/UpdateAccountSuccess.jsp</result>
+			<result name="input">/chapterEleven/UpdateAccountForm.jsp</result>
+        </action>
+ 
+      <action name="AddImage" >
+          <result>/chapterEleven/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="ImageUpload" class="manning.chapterEleven.ImageUpload" >
+        	<result>/chapterEleven/ImageAdded.jsp</result>
+					<result name="input">/chapterEleven/ImageUploadForm.jsp</result>
+        </action>
+        
+     </package>
+     
+</struts>

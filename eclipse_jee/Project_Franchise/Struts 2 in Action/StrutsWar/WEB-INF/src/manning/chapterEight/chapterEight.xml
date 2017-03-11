@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	 <!-- 
+		This package contains the non-secure portions of the Struts 2 Portfolio.  This allows these
+		public actions to share inheritance of things specialized to the non-secure portions of the application.
+	 -->
+		
+    <package name="chapterEightPublic" namespace="/chapterEight" extends="struts-default">
+ 				
+ 		<result-types>
+ 		   <result-type name="customJSON" class="manning.chapterEight.JSONResult" />
+  	</result-types>		
+ 		
+ 		<global-results>
+  		  <result name="error">/chapterEight/Error.jsp</result>
+  	</global-results>
+  		
+    <global-exception-mappings>
+       <exception-mapping exception="java.lang.Exception" result="error"/>
+    </global-exception-mappings>
+
+		<action name="PortfolioHomePage" class="manning.chapterEight.PortfolioHomePage">
+       <result>/chapterEight/PortfolioHomePage.jsp</result>
+		</action>	
+		
+		<action name="ArtistHomePage" class="manning.chapterEight.PortfolioHomePage">
+       <result>/chapterEight/ArtistHomePage.jsp</result>
+		</action>	
+
+		<action name="VisitorHomePage" class="manning.chapterEight.PortfolioHomePage">
+       <result>/chapterEight/VisitorHomePage.jsp</result>
+		</action>	
+		
+			
+		<action name="ViewPortfolioFM" class="manning.chapterEight.ViewPortfolio" >
+			 <result type="freemarker">/chapterEight/ViewPortfolio.ftl</result>
+    </action>
+    
+    <action name="ViewPortfolioJSP" class="manning.chapterEight.ViewPortfolio" >
+			<result>/chapterEight/ViewPortfolio.jsp</result>
+    </action>
+    		
+    <action name="ViewPortfolioVM" class="manning.chapterEight.ViewPortfolio" >
+		   <result type="velocity">/chapterEight/ViewPortfolio.vm</result> 		
+    </action>
+
+ 		<action name="LoginForm" >
+			<result>/chapterEight/Login.jsp</result>
+        </action>
+
+		<action name="Login" class="manning.chapterEight.Login">
+			<result type="redirectAction">
+			   <param name="actionName">AdminPortfolio</param>
+         <param name="namespace">/chapterEight/secure</param>
+         <param name="param1">hardCodedValue</param>
+         <param name="param2">${testProperty}</param>
+      </result>
+			<result name="input">/chapterEight/Login.jsp</result>
+    </action>
+ 
+ 		<action name="Registration" >
+			<result>/chapterEight/Registration.jsp</result>
+        </action>
+
+        <action name="Register" class="manning.chapterEight.Register">
+			<result>/chapterEight/RegistrationSuccess.jsp</result>
+			<result name="input">/chapterEight/Registration.jsp</result>
+        </action>
+        
+		<action name="ForwardToAnotherServlet" class="manning.chapterEight.ForwardToAnotherServlet">
+			<result>/anotherServlet</result>
+    </action>
+ 
+         <action name="ErrorProne" class="manning.chapterEight.ErrorProne" >
+        </action>
+        
+        <action name="AjaxUserBrowser" class="manning.chapterEight.AjaxUserBrowser">
+           <result>ajaxUserBrowser.jsp</result>        
+        </action>    
+         
+        <action name="AjaxRetrieveUser" class="manning.chapterEight.RetrieveUser">
+           <result type="customJSON">artist</result>        
+        </action>    
+     </package>
+
+
+		 <!-- 
+		 			This package contains the secure portions of the Struts 2 Portfolio.  This allows these
+		 			secure actions to share inheritance of things specialized to the secure portions of the application.
+		 -->
+		 <package name="chapterEightSecure" namespace="/chapterEight/secure" extends="struts-default">
+				
+				<!-- We need to define the authentication interceptor and configure a new stack, based upon the 
+							builtin default stack.  We will simply add our authentication stack to the top of the default
+							stack and make it the default intercptor reference for the actions in this package.
+				-->
+				<interceptors>
+
+					<interceptor name="authenticationInterceptor" class="manning.chapterEight.utils.AuthenticationInterceptor"/>
+
+					<interceptor-stack name="secureStack">
+						<interceptor-ref name="authenticationInterceptor"/>
+						<interceptor-ref name="defaultStack"/>
+					</interceptor-stack>
+						
+			</interceptors>
+				
+				<default-interceptor-ref name="secureStack"/>
+
+				<global-results>
+  				<result name="login" type="redirect">/chapterEight/LoginForm.action</result>
+  			  <result name="error">/chapterEight/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="AdminPortfolio" >
+					<result>/chapterEight/AdminPortfolio.jsp</result>
+        </action>
+        
+        <action name="UpdateAccountForm" class="manning.chapterEight.UpdateAccountForm">
+			<result>/chapterEight/UpdateAccountForm.jsp</result>
+        </action>
+        
+        <action name="UpdateAccount" class="manning.chapterEight.UpdateAccount">
+			<result>/chapterEight/UpdateAccountSuccess.jsp</result>
+			<result name="input">/chapterEight/UpdateAccountForm.jsp</result>
+        </action>
+ 
+        
+        <action name="AddImage" >
+          <result>/chapterEight/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="ImageUpload" class="manning.chapterEight.ImageUpload" >
+          <param name="fileSystemPath">./portfolioFS/</param>
+        	<result>/chapterEight/ImageAdded.jsp</result>
+					<result name="input">/chapterEight/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="RemoveImage" >
+					<result>/chapterEight/ImageRemoved.jsp</result>
+        </action>
+        
+     </package>
+     
+</struts>

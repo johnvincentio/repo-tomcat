@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+		 <!-- 
+		 			This package contains the non-secure portions of the Struts 2 Portfolio.  This allows these
+		 			public actions to share inheritance of things specialized to the non-secure portions of the application.
+		 -->
+		
+    <package name="chapterSixPublic" namespace="/chapterSix" extends="struts-default">
+ 				
+ 		 		<global-results>
+  				  <result name="error">/chapterSix/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+				<action name="PortfolioHomePage">
+           			<result>/chapterSix/PortfolioHomePage.jsp</result>
+				</action>	
+			
+				<action name="ViewPortfolios" class="manning.chapterSix.ViewPortfolios">
+					<result>/chapterSix/ViewPortfolios.jsp</result>
+        		</action>
+        		
+        		<action name="ViewPortfolio">
+					<result>/chapterSix/ViewPortfolio.jsp</result>
+        		</action>
+
+ 				<action name="LoginForm" >
+					<result>/chapterSix/Login.jsp</result>
+        </action>
+
+				<action name="Login" class="manning.chapterSix.Login">
+					<result type="redirect">/chapterSix/secure/AdminPortfolio.action</result>
+					<result name="input">/chapterSix/Login.jsp</result>
+        </action>
+ 
+ 				<action name="Registration" >
+					<result>/chapterSix/Registration.jsp</result>
+        </action>
+
+        <action name="Register" class="manning.chapterSix.Register">
+					<result>/chapterSix/RegistrationSuccess.jsp</result>
+					<result name="input">/chapterSix/Registration.jsp</result>
+        </action>
+
+        <action name="ErrorProne" class="manning.chapterSix.ErrorProne" >
+        </action>
+        
+        <action name="PropertyTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/PropertyTag.jsp</result>
+        </action>
+        
+        <action name="SetTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/SetTag.jsp</result>
+        </action>
+        
+        <action name="PushTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/PushTag.jsp</result>
+        </action>
+        
+        <action name="BeanTagWithVar" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/BeanTag1.jsp</result>
+        </action>
+        
+       <action name="BeanTagWithValueStack" class="manning.chapterSix.TagDemo">
+			  <result>/chapterSix/BeanTag2.jsp</result>
+        </action>
+ 
+        
+        <action name="ActionTag" class="manning.chapterSix.TagDemo">
+					<result>/chapterSix/ActionTag.jsp</result>
+        </action>
+        
+        <action name="ActionTagNoResult" class="manning.chapterSix.TagDemo">
+					<result>/chapterSix/ActionTagNoResult.jsp</result>
+        </action>
+        
+        <action name="TargetAction" class="manning.chapterSix.TargetAction">
+					<result>/chapterSix/TargetResult.jsp</result>
+        </action>
+        
+        <action name="IteratorTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/IteratorTag.jsp</result>
+        </action>
+        
+        <action name="IfElseTags" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/IfElseTags.jsp</result>
+        </action>
+        
+        <action name="IncludeTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/IncludeTag.jsp</result>
+        </action>
+        
+        <action name="UrlTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/UrlTag.jsp</result>
+        </action>
+        
+        <action name="InternationalizationTags" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/InternationalizationTags.jsp</result>
+        </action>
+        
+        <action name="ParamTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/ParamTag.jsp</result>
+        </action>
+        
+        <action name="DebugTag" class="manning.chapterSix.TagDemo">
+			<result>/chapterSix/DebugTag.jsp</result>
+        </action>
+         
+     </package>
+
+
+		 <!-- 
+		 			This package contains the secure portions of the Struts 2 Portfolio.  This allows these
+		 			secure actions to share inheritance of things specialized to the secure portions of the application.
+		 -->
+		 <package name="chapterSixSecure" namespace="/chapterSix/secure" extends="struts-default">
+				
+				<!-- We need to define the authentication interceptor and configure a new stack, based upon the 
+							builtin default stack.  We will simply add our authentication stack to the top of the default
+							stack and make it the default intercptor reference for the actions in this package.
+				-->
+				<interceptors>
+
+					<interceptor name="authenticationInterceptor" class="manning.chapterSix.utils.AuthenticationInterceptor"/>
+
+					<interceptor-stack name="secureStack">
+						<interceptor-ref name="authenticationInterceptor"/>
+						<interceptor-ref name="defaultStack"/>
+					</interceptor-stack>
+						
+			</interceptors>
+				
+				<default-interceptor-ref name="secureStack"/>
+
+				<global-results>
+  				<result name="login" type="redirect">/chapterSix/LoginForm.action</result>
+  			  <result name="error">/chapterSix/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="AdminPortfolio" >
+					<result>/chapterSix/AdminPortfolio.jsp</result>
+        </action>
+        
+        <action name="AddImage" >
+          <result>/chapterSix/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="ImageUpload" class="manning.chapterSix.ImageUpload" >
+          <param name="fileSystemPath">./portfolioFS/</param>
+        	<result>/chapterSix/ImageAdded.jsp</result>
+					<result name="input">/chapterSix/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="RemoveImage" >
+					<result>/chapterSix/ImageRemoved.jsp</result>
+        </action>
+        
+     </package>
+     
+</struts>

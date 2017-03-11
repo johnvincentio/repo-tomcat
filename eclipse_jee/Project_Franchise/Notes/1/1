@@ -1,0 +1,39 @@
+
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
+<%@ taglib uri="/WEB-INF/herc.tld" prefix="h" %>
+
+
+<s:text name="company.pageTitle"></s:text>
+
+<s:text name="site.disclaimerContent"></s:text>
+<s:text name='site.disclaimerContent'></s:text>
+
+
+<s:text name="program.pageTitle"></s:text>
+
+<s:text name="contact.pageTitle"></s:text>
+
+
+<s:text name="form.pageTitle"></s:text>
+
+<s:label key="form.prefix" name="prefix"/>
+
+
+<s:select list="itemList" headerKey="0" headerValue="%{getText('propertyKey')}"/>
+
+
+
+
+<hr/>
+benefits
+<hr/>
+<s:text name="benefits.pageTitle"></s:text>
+<hr/>
+<s:text name="benefits.firstHeading"></s:text>
+<hr/>
+<s:text name="global.firstName"></s:text>
+<hr/>
+<s:text name="site.metaKeywords"></s:text>
+<hr/>
+

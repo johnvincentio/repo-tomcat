@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+ 
+	<definition name="baseLayout" template="/layouts/base.jsp">
+		<put-attribute name="head" value="/layouts/templates/rb/headView.jsp" />
+		<put-attribute name="header" value="/layouts/templates/rb/headerView.jsp" />
+		<put-attribute name="navigation" value="/layouts/templates/rb/navigationView.jsp" />
+		<put-attribute name="footer" value="/layouts/templates/rb/footerView.jsp" />
+		<put-attribute name="globalInPage" value="/theme/globalInPage.jsp" />
+	</definition>
+
+	<definition name="home.home" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/homeView.jsp" />
+	</definition>
+	<definition name="home.history" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/companyView.jsp" />
+	</definition>
+	<definition name="home.provenSystem" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/franchiseProgramView.jsp" />
+	</definition>
+	<definition name="home.whatItTakes" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/franchiseBuyView.jsp" />
+	</definition>
+	<definition name="home.whatYouWillReceive" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/franchiseBenefitsView.jsp" />
+	</definition>
+	<definition name="home.contactUs" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/contactUsView.jsp" />
+	</definition>
+	<definition name="home.contactUsConfirm" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/contactUsConfirmView.jsp" />
+	</definition>
+	<definition name="home.dialects" extends="baseLayout">
+		<put-attribute name="body" value="/templates/rb/dialectsView.jsp" />
+	</definition>
+
+<!-- Test setup -->
+	<definition name="test.simple.page" template="/layouts_test/testing/simpletest.jsp" />
+
+	<definition name="testBaseLayout" template="/layouts_test/testing/base.jsp">
+		<put-attribute name="title" value="Struts Tiles Test" />
+		<put-attribute name="menu" value="/layouts_test/testing/menu.jsp" />
+		<put-attribute name="body" value="/layouts_test/testing/body.jsp" />
+		<put-attribute name="footer" value="/layouts_test/testing/footer.jsp" />
+	</definition>
+	<definition name="test.page" extends="testBaseLayout">
+		<put-attribute name="body" value="layouts_test/testing/homeBody.jsp" />
+	</definition>
+
+	<definition name="testBaseTestLayout" template="/layouts_test/testing_2/base.jsp">
+		<put-attribute name="footer" value="/layouts_test/testing/footer.jsp" />
+	</definition>
+	<definition name="test_test.page" extends="testBaseTestLayout">
+		<put-attribute name="title" value="test_test_page" />
+		<put-attribute name="footer" value="/layouts_test/testing_2/footerView.jsp" />
+	</definition>
+		<definition name="test_url_test.page" extends="testBaseTestLayout">
+		<put-attribute name="title" value="test_url_page" />
+		<put-attribute name="footer" value="/layouts_test/testing_2/footerView_curl.jsp" />
+	</definition>
+
+</tiles-definitions>

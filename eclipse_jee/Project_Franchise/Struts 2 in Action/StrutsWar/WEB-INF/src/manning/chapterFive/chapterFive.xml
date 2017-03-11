@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+		 <!-- 
+		 			This package contains the non-secure portions of the Struts 2 Portfolio.  This allows these
+		 			public actions to share inheritance of things specialized to the non-secure portions of the application.
+		 -->
+		
+    <package name="chapterFivePublic" namespace="/chapterFive" extends="struts-default">
+ 				
+ 		 		<global-results>
+  				  <result name="error">/chapterFive/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+				<action name="PortfolioHomePage">
+           <result>/chapterFive/PortfolioHomePage.jsp</result>
+				</action>	
+			
+				<action name="ViewPortfolios" >
+					<result>/chapterFive/ViewPortfolios.jsp</result>
+        </action>
+
+ 				<action name="LoginForm" >
+					<result>/chapterFive/Login.jsp</result>
+        </action>
+
+				<action name="Login" class="manning.chapterFive.Login">
+					<result type="redirect">/chapterFive/secure/AdminPortfolio.action</result>
+					<result name="input">/chapterFive/Login.jsp</result>
+        </action>
+ 
+ 				<action name="Registration" >
+					<result>/chapterFive/Registration.jsp</result>
+        </action>
+
+        <action name="Register" class="manning.chapterFive.Register">
+					<result>/chapterFive/RegistrationSuccess.jsp</result>
+					<result name="input">/chapterFive/Registration.jsp</result>
+        </action>
+
+				<action name="DataTransferTestForm" >
+					<result>/chapterFive/DataTransferTest.jsp</result>
+        </action>
+            
+        <action name="DataTransferTest" class="manning.chapterFive.DataTransferTest">
+					<result>/chapterFive/DataTransferSuccess.jsp</result>
+					<result name="input">/chapterFive/DataTransferTest.jsp</result>
+        </action> 
+        
+        <action name="ArraysDataTransferTestForm" >
+					<result>/chapterFive/ArraysDataTransferTest.jsp</result>
+        </action>
+            
+        <action name="ArraysDataTransferTest" class="manning.chapterFive.DataTransferTest">
+					<result>/chapterFive/ArraysDataTransferSuccess.jsp</result>
+					<result name="input">/chapterFive/ArraysDataTransferTest.jsp</result>
+        </action> 
+                         
+				<action name="ListsDataTransferTestForm" >
+					<result>/chapterFive/ListsDataTransferTest.jsp</result>
+        </action>
+            
+        <action name="ListsDataTransferTest" class="manning.chapterFive.DataTransferTest">
+					<result>/chapterFive/ListsDataTransferSuccess.jsp</result>
+					<result name="input">/chapterFive/ListsDataTransferTest.jsp</result>
+        </action> 
+        
+        <action name="MapsDataTransferTestForm" >
+					<result>/chapterFive/MapsDataTransferTest.jsp</result>
+        </action>
+            
+        <action name="MapsDataTransferTest" class="manning.chapterFive.DataTransferTest">
+					<result>/chapterFive/MapsDataTransferSuccess.jsp</result>
+					<result name="input">/chapterFive/MapsDataTransferTest.jsp</result>
+        </action> 
+        
+        <action name="CustomConverterTestForm" >
+					<result>/chapterFive/CustomConverterTest.jsp</result>
+        </action>
+            
+        <action name="CustomConverterTest" class="manning.chapterFive.CustomConverterTest">
+					<result>/chapterFive/CustomConverterSuccess.jsp</result>
+					<result name="input">/chapterFive/CustomConverterTest.jsp</result>
+        </action> 
+        
+     </package>
+
+
+		 <!-- 
+		 			This package contains the secure portions of the Struts 2 Portfolio.  This allows these
+		 			secure actions to share inheritance of things specialized to the secure portions of the application.
+		 -->
+		 <package name="chapterFiveSecure" namespace="/chapterFive/secure" extends="struts-default">
+				
+				<!-- We need to define the authentication interceptor and configure a new stack, based upon the 
+							builtin default stack.  We will simply add our authentication stack to the top of the default
+							stack and make it the default intercptor reference for the actions in this package.
+				-->
+				<interceptors>
+
+					<interceptor name="authenticationInterceptor" class="manning.chapterFive.utils.AuthenticationInterceptor"/>
+
+					<interceptor-stack name="secureStack">
+						<interceptor-ref name="authenticationInterceptor"/>
+						<interceptor-ref name="defaultStack"/>
+					</interceptor-stack>
+						
+			</interceptors>
+				
+				<default-interceptor-ref name="secureStack"/>
+
+				<global-results>
+  				<result name="login" type="redirect">/chapterFive/LoginForm.action</result>
+  			  <result name="error">/chapterFive/Error.jsp</result>
+  			</global-results>
+  		
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="AdminPortfolio" >
+					<result>/chapterFive/AdminPortfolio.jsp</result>
+        </action>
+        
+        <action name="AddImage" >
+          <result>/chapterFive/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="ImageUpload" class="manning.chapterFive.ImageUpload" >
+          <param name="fileSystemPath">./portfolioFS/</param>
+         	<result>/chapterFive/ImageAdded.jsp</result>
+					<result name="input">/chapterFive/ImageUploadForm.jsp</result>
+        </action>
+        
+        <action name="RemoveImage" >
+					<result>/chapterFive/ImageRemoved.jsp</result>
+        </action>
+        
+     </package>
+     
+</struts>

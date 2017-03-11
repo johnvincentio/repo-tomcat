@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <contactUsConfirmView>
+		<pageTitle>
+			<![CDATA[Contact Us]]> 
+  		</pageTitle>
+  		<sectionTitle>
+			<![CDATA[Franchise Opportunity Confirmation]]> 
+  		</sectionTitle>
+		<confirmationContent>
+			<![CDATA[<p>Thank you for your inquiry regarding the franchise opportunities available at Hertz Equipment Rental. Your questions/comments have been submitted and a representative from our Franchise Development Department will be in contact with you.</p>]]> 
+  		</confirmationContent>
+  		<contactTitle>
+  			<![CDATA[Franchise Development Department]]>
+  		</contactTitle>
+  		<contactAddress>
+  			<![CDATA[225 Brae Boulevard]]>
+  		</contactAddress>
+  		<contactCityState>
+  			<![CDATA[Park Ridge, NJ 07656]]>
+  		</contactCityState>
+  		<contactPhone>
+  			<![CDATA[(201) 307-2087]]>
+  		</contactPhone>
+  		<contactPhone1>
+  			<![CDATA[Toll-Free (800) 225-1277]]>
+  		</contactPhone1>
+  		<contactFax>
+  			<![CDATA[Fax:(888) 817-7694]]>
+  		</contactFax>
+  		<contactEmail>
+  			<![CDATA[hercbusinessdevelopment@hertz.com]]>
+  		</contactEmail>
+  </contactUsConfirmView>

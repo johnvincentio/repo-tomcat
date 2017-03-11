@@ -1,0 +1,443 @@
+/*
+	Copyright (c) 2005 The Hertz Corporation
+	All Rights Reserved.  (Unpublished.)
+
+	The information contained herein is confidential and
+	proprietary to The Hertz Corporation and may not be
+	duplicated, disclosed to third parties, or used for any
+	purpose not expressly authorized by it.  Any unauthorized
+	use, duplication, or disclosure is prohibited by law.
+*/
+
+html, form {
+	padding: 0px;
+	margin: 0px;
+	font: 9pt Arial;
+	min-width: 960px;
+}
+body{
+	padding: 0px;
+	margin: 0px;
+	font: 9pt Arial;
+	min-width: 960px;
+	text-align:center;
+}
+p,h1,h2,h3 {
+	padding: 0px;
+	margin: 0px;	
+}
+
+a {
+	color: #3366AA;
+}
+li{
+	display: list-item;
+	padding:0px;
+	margin:0px;
+}
+img {
+	border: none;	
+}
+.alignTop {
+	vertical-align: top;	
+}
+.headerContainer{
+	background-color:#ffdd00;
+}
+.navigationContainer{
+	background-color:#ffdd00;
+}
+.bodyContainer{
+	background-color:#ffffff;
+}
+.footerContainer{
+	background-color:#373737;
+}
+.centerContainers{
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	text-align:left;
+}
+.mainContainer{
+	border-right: 1px solid #373737;
+	border-left: 1px solid #373737;
+	border-bottom: 1px solid #373737;
+	padding:8px 10px 15px 0px;
+	margin-bottom: 10px;
+}
+.contentContainer{
+	padding-left: 25px;
+}
+.mainNarrowLftContent{
+	width: 445px;
+	padding-right:10px; 
+}
+.benefitsMainNarrowLftContent{
+	width: 445px;
+	padding-right:10px; 
+	border-right:2px solid #cccccc;
+}
+.benefitsBulletList{
+	margin-top: 5px;
+}
+.mainNarrowRgtContent{
+	width: 450px;
+	padding-left:15px;
+	border-left:2px solid #cccccc;
+}
+.benefitsMainNarrowRgtContent{
+	width: 450px;
+	padding-left:15px;
+}
+.mainContent{
+	width:500px;
+	font: 9pt Arial;
+	padding:0px;
+	margin:0px;
+}
+.mainWideContent{
+	width:600px;
+	border-right:2px solid #cccccc;
+}
+.mainWideNoBorderContent{
+	width:600px;
+}
+.navigationImage{
+	height:185px;
+	width:756px;
+	margin:0px;
+	padding:0px;
+	/*position:relative;
+	bottom: -2px;
+	left: -2px;*/
+}
+.navImgBorder{
+	border-right:1px solid #373737;
+}
+.contentImageCell{
+	margin:0px 0px 10px 40px;
+	height:282px;
+	width: 336px;
+}
+.contentImage{
+	margin-left: 40px;
+}
+.contentVideo{
+	margin:70px 20px 10px 40px;
+	height:205px;
+	width: 362px;
+	background-color:#cccccc;
+}
+.navigationMenuContainer{
+	padding:0px;
+	border-top: 1px solid #373737;
+	height:185px;
+}
+.navigationMenu{
+	background-color: #373737;
+	margin:0px;
+	width:203px;	
+}
+.navigationMenuItem {	
+	font:bold 10pt Arial;
+	padding: 5px 0px 5px 0px;	
+}
+.navigationMenuItemSpacer{
+	padding-left:5px;
+}
+.navigationMenuItemText {
+	width: 100%;
+	color: #ffdd00;
+	text-decoration: none;
+	display: block;	
+	white-space: nowrap;
+	padding-left: 2px;
+}
+.navigationMenuItemSelectedText{
+	color: #ffffff;
+}
+
+.navigationMenuItemUnselectedText{
+	margin: 0px 5px 0px 0px;
+}
+.navigationMenuItemUnselectedTextLast{
+	margin: 0px 5px 10px 0px;
+}
+
+.navigationLogoImg{
+	height:73px;
+	width: 353px;
+}
+.navigationTitle{
+	padding:30px 190px 30px 16px;
+	vertical-align: middle;
+	font:italic bold 14pt Arial;
+}
+.navigationSeperatorLine{	
+	margin-left:15px;
+	border-right:1px solid #000000;
+	height:60px;
+}
+.navigationLinksContainer{
+	text-align:right;
+}
+.navigationLinks{
+	padding-top:35px;
+}
+.navigationLinksText{
+	text-decoration:none;
+	color: #000000;
+	font: bold 8pt Arial;
+}
+.block {
+	display: block;
+}
+.spacer{
+	padding-top:10px;
+}
+.floatLeft{
+	float:left;
+}
+.clear {
+	clear: both;
+}
+.inline{
+	display: inline;
+}
+.removed {
+	display: none;
+}
+.franchisePageTitle{
+	font: bold 13pt Arial;
+	margin-bottom:4px;
+	padding: 4px 10px 2px 20px;
+	text-transform:uppercase;
+	background-color: #ffdd00;
+	width: 250px;
+	position:relative;
+	left: -15px;
+}
+.navigationCorner{
+	background-image: url('https://images.hertz.com/herc/franchise/misc/nav-corner.gif');
+	background-repeat:no-repeat;
+	position: relative;
+	left:-15px;
+	top: -5px;		
+	width:14px;
+	height:5px;
+}
+.navigationMenuItemBorder {
+	border-bottom: 1px solid #fff;
+}
+.footerPhoneIcon{
+	background-image: url('https://images.hertz.com/herc/franchise/misc/phone-icon.gif');
+	position: relative;
+	top:-1px;	
+	left:-2px;
+	width:18px;
+	height:18px;
+	margin-right: 2px;	
+}
+.footerFaxIcon{
+	background-image: url('https://images.hertz.com/herc/franchise/misc/fax-icon.gif');
+	position: relative;
+	left:-2px;
+	top:-1px;	
+	width:18px;
+	height:17px;
+	margin-right: 2px;	
+}
+.footerEmailIcon{
+	background-image: url('https://images.hertz.com/herc/franchise/misc/email-icon.gif');
+	background-repeat:no-repeat;
+	position: relative;
+	left:-2px;
+	top:1px;	
+	width:18px;
+	height:13px;
+	margin-right: 2px;	
+}
+.franchisePageHeading{
+	font: bold 9pt Arial;
+	text-transform: uppercase;
+	padding: 0px;
+}
+.franchiseSecondHeading{
+	font: bold 9pt Arial;	
+}
+.footerHeader{
+	font: bold 11pt Arial;
+	color: #ffdd00;
+	padding:10px 0px 5px 0px;
+}
+.footerColumn{
+	width:235px;
+	padding: 0px 0px 10px 0px;
+}
+.footerCenterContainer {
+	padding-left: 25px;
+}
+.footerLinkText{
+	font: 8pt Arial;
+	color: #ffffff;
+	text-decoration: none;
+}
+.footerLinkItem{
+	padding: 0px 0px 2px 0px;
+}
+.footerDivider{
+	width:100%; 
+	border-top: 1px solid #ffffff;
+}
+.footerCopyRightContent{
+	font: 8pt Arial;
+	color: #ffffff;
+	text-align:center;
+	padding: 10px 0px 10px 0px;
+}
+.footerCopyRightLinkDiv{
+	padding-right:3px;
+}
+.footerCopyRightLinks{
+	font: 8pt Arial;
+	color: #ffffff;
+	text-decoration: underline;
+}
+.disclaimerContent{
+	padding-top: 30px;
+	font: 8pt Arial;	
+}
+.homeFirstList{
+	padding:0px 55px 0px 0px;
+	margin: 3px 0px 0px 18px;
+}
+.homeSecondList{
+	margin-top:3px;
+}
+.homeThirdList{
+	margin-top:3px;
+}
+.homeFourthList{
+	padding:0px 90px 0px 20px;
+	margin: 3px 0px 0px 0px;
+}
+.homeFifthList{
+	padding-right:130px;
+	margin-top:3px;
+}
+.homeSixthList{
+	margin-top:3px;
+}
+.homeInfoContent{
+	padding:10px 0px 10px 0px;
+}
+.companyBulletList{
+	padding:0px;
+	margin: 2px 0px 0px 25px;
+}
+.buyBulletList{
+	padding:0px;
+	margin: 2px 0px 0px 20px;
+}
+.programLink{
+	text-transform:lowercase;
+}
+.programListContainer{
+	padding-left:10px;
+}
+.programBulletList{
+	padding:0px;
+	margin: 0px 0px 0px 20px;
+}
+.contactUsContainer{
+	padding-left:40px;
+}
+.contactUsConfirmBorder{
+	border-left:2px solid #cccccc;
+	height:300px;
+}
+.contactUsPadding{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.fontCategorySubLinkText {
+	font: 9pt Arial;
+	color: #3366aa;
+	text-decoration: underline;
+}
+.fontHypertextLinksMisc {
+	font: 8pt Arial;
+	color: #3366aa;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.fontSmallTextRegular {
+	font: 8pt Arial;	
+}
+.fontNormalTextRegular {
+	font: 9pt Arial;	
+}
+.fontNormalTextItalic {
+	font: italic 9pt Arial;	
+}
+.fontSmallTextBold {
+	font: bold 8pt Arial;
+}
+
+.fontNormalTextBold {
+	font: bold 9pt Arial;	
+}
+
+.pointer {
+	cursor: pointer;
+}
+.formFieldContainer {
+	padding-bottom: 10px;
+}
+.formFieldDefault {
+	width: 215px;	
+}
+.formFieldLabel {
+	padding:0px 0px 5px 0px;
+}
+.formFieldSpacer {
+	width:115px;
+}
+.contactUsFormField{
+	padding:0px 0px 62px 0px;
+}
+.formTextareaDefault {
+	width: 540px;	
+}
+.errorList {
+	font: bold 9pt Arial;
+	color: red;
+}
+
+.errorField {
+	font-weight: bold;
+	color: red !important;
+}
+
+.errorBorder {
+	border: 1px solid red !important;	
+}
+.submitBtn {
+	background-color: #ffdd00;
+	border: 1px solid #ffdd00;
+	font: bold 12px Arial;
+	text-transform: uppercase;
+}
+
+.underline {
+	text-decoration: underline;	
+}
+.downloadImg {
+	margin-left: 5px;
+	vertical-align: text-bottom;
+}
+
+.maxWidth {
+	width: 100%;
+}

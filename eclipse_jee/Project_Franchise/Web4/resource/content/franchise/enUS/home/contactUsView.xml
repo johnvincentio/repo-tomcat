@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <contactUsView>
+		<pageTitle>
+			<![CDATA[Contact Us]]> 
+  		</pageTitle>
+  		<sectionTitle>
+			<![CDATA[inquire about franchise opportunities]]> 
+  		</sectionTitle>
+		<informationContent>
+			<![CDATA[For information or inquiries, please use the contact form below or contact:]]> 
+  		</informationContent>
+  		<chooseOneContent>
+			<![CDATA[Choose One]]> 
+  		</chooseOneContent>
+  		<contactTitle>
+  			<![CDATA[Franchise Development Department]]>
+  		</contactTitle>
+  		<contactAddress>
+  			<![CDATA[225 Brae Boulevard]]>
+  		</contactAddress>
+  		<contactCityState>
+  			<![CDATA[Park Ridge, NJ 07656]]>
+  		</contactCityState>
+  		<contactPhone>
+  			<![CDATA[Office: (201) 307-2087]]>
+  		</contactPhone>
+  		<contactPhone1>
+  			<![CDATA[Toll-Free: (800) 225-1277]]>
+  		</contactPhone1>
+  		<contactFax>
+  			<![CDATA[Fax: (888) 817-7694]]>
+  		</contactFax>
+  		<contactEmail>
+  			<![CDATA[hercbusinessdevelopment@hertz.com]]>
+  		</contactEmail>
+  		<submit>
+  			<![CDATA[submit]]>
+  		</submit>
+  		<browserUpgradeMessage>
+  			<![CDATA[<p>
+  			<b>Did you know your browser is outdated?</b></p><p>&nbsp;</p><p>
+To get the safest and best possible experience using our website (and many others), we  recommend that you upgrade to a newer version or change to another web browser.  A list of the most popular browsers can be found below. </p><p>&nbsp;</p>
+<p>Why should you upgrade?  Better security and phishing protection, faster speed, more web compliance standards and the ability to view multiple tabs in one browser are among some of the many reasons to upgrade. </p><p>&nbsp;</p><p>&nbsp;</p>
+<p style="text-align:left">Click on the icons below to upgrade:</p>]]>
+  		</browserUpgradeMessage>	
+  </contactUsView>

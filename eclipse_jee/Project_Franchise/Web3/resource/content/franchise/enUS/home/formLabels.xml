@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <formLabels>
+		<requiredNote>
+			<![CDATA[Indicates a required field]]> 
+  		</requiredNote>
+		<prefix>
+			<![CDATA[Prefix]]> 
+  		</prefix>
+		<firstName>
+			<![CDATA[First Name]]> 
+  		</firstName>
+		<middleName>
+			<![CDATA[Middle Name/Initial]]>
+  		</middleName>
+		<lastName>
+			<![CDATA[Last Name]]>
+  		</lastName>
+		<suffix>
+			<![CDATA[Suffix]]>
+		</suffix>
+		<businessName>
+			<![CDATA[Business Name]]>
+		</businessName>
+		<contactName>
+			<![CDATA[Contact Name]]>
+		</contactName>
+		<address>
+			<![CDATA[Address]]>
+		</address>	
+		<address1>
+			<![CDATA[Address Line 1]]>
+		</address1>		
+		<address2>
+			<![CDATA[Address Line 2]]>
+		</address2>
+		<city>
+			<![CDATA[City]]>
+		</city>
+		<country>
+			<![CDATA[Country]]>
+		</country>
+		<state>
+			<![CDATA[State/Province]]>
+		</state>
+		<zip>
+			<![CDATA[Zip/Postal Code]]>
+		</zip>
+		<email1>
+			<![CDATA[Email]]>
+		</email1>
+		<email2>
+			<![CDATA[Re-enter Email]]>
+		</email2>
+		<phone>
+			<![CDATA[Phone]]>
+		</phone>
+		<fax>
+			<![CDATA[Fax]]>
+		</fax>
+		<comments>
+			<![CDATA[Questions/Comments]]>
+		</comments> 			
+  </formLabels>

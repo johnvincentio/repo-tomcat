@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> Populate States dropdown on change of Country Dropdown using Javascript : devzone.co.in</title>
+        <script type= "text/javascript" src = "countries3.js"></script>
+        <style>
+	.main { 
+	width: 900px; 
+	margin: 0 auto; 
+        height: 900px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        }
+                
+        .header{
+    height: 100px;    
+}
+.content{    
+    height: 700px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+.footer{
+    height: 100px;  
+    bottom: 0px;
+}
+.heading{
+    color: #FF5B5B;
+    margin: 10px 0;
+    padding: 10px 0;
+    font-family: trebuchet ms;
+}
+#downloaded from http://devzone.co.in
+        </style>
+    </head>
+    <body>
+        <div class="main">
+             <div class="header"><a title="devzone.co.in" href="http://devzone.co.in/"><img alt="devzone.co.in" src="http://devzone.co.in/wp-content/uploads/tn_mesocolumn_header_logo.png"></a></div>
+             <div class="content">
+                 <div class="heading">
+                     Populate States dropdown on change of Country Dropdown using Javascript                     
+                 </div>
+        <table cellspacing="2" cellpadding='2'>
+            <tr><td>
+                    Select Country:</td><td>   <select onchange="print_state('state', this.selectedIndex);" id="country" name ="country"></select></td></tr>
+            <tr><td>
+                    City/District/State:</td><td> <select name ="state" id ="state"></select></td></tr>
+        </table>    
+        <script language="javascript">print_country("country");</script>	
+        
+            </div>
+             <div class="footer"><a href='http://devzone.co.in'>DevZone.co.in</a></div>
+        </div>
+    </body>		
+</html>

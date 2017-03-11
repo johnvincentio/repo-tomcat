@@ -1,0 +1,164 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+       "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+
+	<field name="contactUsInfo.firstName">
+		<field-validator type="requiredStringField" short-circuit="true">
+			<message key="NHX501" />
+		</field-validator>
+		<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.firstName}</param>
+			<message key="DZX005" />
+		</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z .']+</param>
+			<message key="NHX501" />
+      	</field-validator>		
+	</field>
+
+	<field name="contactUsInfo.lastName">
+		<field-validator type="requiredStringField" short-circuit="true">
+			<message key="NHX503" />
+		</field-validator>
+		<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.lastName}</param>
+			<message key="DZX005" />
+		</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z .']+</param>
+			<message key="NHX503" />
+      	</field-validator>		
+	</field>
+	
+	<field name="contactUsInfo.middleName">
+		<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.middleName}</param>
+			<message key="DZX005" />
+		</field-validator>
+		<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z .']+</param>
+			<message key="NHX502" />
+      	</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.businessName">
+		<field-validator type="sqlInjection">
+			<param name="messageArgs">${contactUsInfo.businessName}</param>
+			<message key="DZX005" />
+		</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.address1">
+		<field-validator type="requiredStringField" short-circuit="true">
+			<message key="NHX505" />
+		</field-validator>
+		<field-validator type="sqlInjection">
+			<param name="messageArgs">${contactUsInfo.address1}</param>
+			<message key="DZX005" />
+		</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.address2">
+		<field-validator type="sqlInjection">
+			<param name="messageArgs">${contactUsInfo.address2}</param>
+			<message key="DZX005" />
+		</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.city">
+		<field-validator type="requiredStringField" short-circuit="true">
+     		<message key="NHX507" />
+      	</field-validator>
+		<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.city}</param>
+			<message key="DZX005" />
+		</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z0-9 .'-_]+</param>
+			<message key="NHX507" />
+      	</field-validator>
+	</field>
+		
+	<field name="contactUsInfo.zip">
+		<field-validator type="requiredStringField" short-circuit="true">
+     		<message key="NHX509" />
+      	</field-validator>	
+		<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.zip}</param>
+			<message key="DZX005" />
+		</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z0-9 .']+</param>
+			<message key="NHX509" />
+      	</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.countryState">
+		<field-validator type="requiredStringField">
+			<message key="NHX508" />
+		</field-validator>
+	</field>	
+		
+	<field name="contactUsInfo.email1">
+		<field-validator type="requiredStringField" short-circuit="true">
+     		<message key="NHX515" />
+      	</field-validator>
+      	<field-validator type="sqlInjection" short-circuit="true">
+			<param name="messageArgs">${contactUsInfo.email1}</param>
+			<message key="DZX005" />
+		</field-validator>
+		<field-validator type="email">
+ 			<message key="NHX515" />
+      	</field-validator>
+	</field>
+	
+	<field name="contactUsInfo.email2">
+		<field-validator type="fieldexpression">
+     		<param name="expression">contactUsInfo.email1 eq contactUsInfo.email2</param>
+			<message key="NHX518" />
+		</field-validator>
+    </field>
+    
+	
+	<field name="contactUsInfo.phone">
+		<field-validator type="requiredStringField" short-circuit="true">
+			<message key="NHX510" />
+		</field-validator>
+		<field-validator type="sqlInjection" short-circuit="true">
+      		<param name="messageArgs">${contactUsInfo.phone}</param>
+           	<message key="DZX005" />
+      	</field-validator> 
+		<field-validator type="stringLengthField" short-circuit="true">
+			<param name="minLength">10</param>
+			<param name="maxLength">30</param>
+           	<message key="NHX510" />
+      	</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z0-9 +()]+</param>
+			<message key="NHX510" />
+      	</field-validator> 
+	</field>
+	
+	<field name="contactUsInfo.fax">
+		<field-validator type="sqlInjection" short-circuit="true">
+      		<param name="messageArgs">${contactUsInfo.fax}</param>
+           	<message key="DZX005" />
+      	</field-validator> 
+		<field-validator type="stringLengthField" short-circuit="true">
+			<param name="minLength">10</param>
+			<param name="maxLength">30</param>
+           	<message key="NHX511" />
+      	</field-validator>
+      	<field-validator type="stringPattern">
+     		<param name="includePattern">[-A-Za-z0-9 +()]+</param>
+			<message key="NHX511" />
+      	</field-validator> 
+	</field>
+	
+	<field name="contactUsInfo.comments">
+      	<field-validator type="sqlInjection">
+			<param name="messageArgs">${contactUsInfo.comments}</param>
+			<message key="DZX005" />
+		</field-validator>
+	</field>
+</validators>

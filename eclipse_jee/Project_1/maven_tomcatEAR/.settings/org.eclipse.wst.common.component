@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="maven_tomcatEAR">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="maven_tomcat.war" deploy-path="/" handle="module:/resource/maven_tomcat/maven_tomcat">
+            <dependent-object>Module_1398188711612</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="maven_jsf_tomcat_2.war" deploy-path="/" handle="module:/resource/maven_jsf_tomcat_2/maven_jsf_tomcat_2">
+            <dependent-object>Module_1398195968064</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
