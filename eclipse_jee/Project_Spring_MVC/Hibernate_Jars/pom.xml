@@ -8,7 +8,7 @@
 	<name>maven_tomcat</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<hibernate.version>5.1.3.Final</hibernate.version>
+		<hibernate.version>5.3.5.Final</hibernate.version>
 	</properties>
 	<dependencies>
 		<dependency>
