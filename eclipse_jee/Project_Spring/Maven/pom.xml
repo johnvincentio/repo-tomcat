@@ -189,7 +189,7 @@ May also need, listed in Spring in Action
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
-		<version>4.11</version>
+		<version>4.13.1</version>
 		<scope>test</scope>
 	</dependency>
 
